@@ -54,7 +54,7 @@ const FeaturedChallenges: React.FC<FeaturedChallengesProps> = ({ challenges }) =
                     <Button
                         variant="outline"
                         size="icon"
-                        className="w-8 h-8 p-1"
+                        className="w-8 h-8 p-1 cursor-pointer"
                         onClick={() => scroll('left')}
                     >
                         <ChevronLeft className="w-5 h-5" />
@@ -64,7 +64,7 @@ const FeaturedChallenges: React.FC<FeaturedChallengesProps> = ({ challenges }) =
                     <Button
                         variant="outline"
                         size="icon"
-                        className="w-8 h-8 p-1"
+                        className="w-8 h-8 p-1 cursor-pointer"
                         onClick={() => scroll('right')}
                     >
                         <ChevronRight className="w-5 h-5" />

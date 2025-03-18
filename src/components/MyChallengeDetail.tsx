@@ -2,6 +2,7 @@ import React from 'react';
 import { calculateBadge } from '@/lib/utils';
 import Image from 'next/image';
 import { Badge } from './ui/badge';
+import { useRouter } from 'next/navigation';
 
 interface Challenge {
     id: string;
@@ -12,16 +13,14 @@ interface Challenge {
 }
 
 
-const MyChallengeDetail: React.FC<Challenge> = ({ badges, id, imageSrc, status,
+const MyChallengeDetail: React.FC<Challenge> = ({ badges, id, status,
     title
 }) => {
-    console.log({
-        id, imageSrc, status
-    })
-    const badge = calculateBadge(badges[0]);
-    console.log(badge, 'badge')
+    const router = useRouter();
     return (
-        <div className="flex justify-between items-center border-b border-gray-100 pb-2">
+        <div className="flex justify-between items-center border-b border-gray-100 pb-2"
+            onClick={() => router.push(`/challenge/${id}`)}
+        >
             <div className="flex items-center space-x-3">
                 <div className="w-8 h-8 bg-amber-100 rounded-md flex items-center justify-center">
                     <Image
